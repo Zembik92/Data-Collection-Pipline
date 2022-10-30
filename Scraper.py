@@ -135,8 +135,7 @@ class Scraper:
             try:
                 see_all_photos = driver.find_element(by=By.XPATH, value='//*[@id="property-critical-root"]')
                 time.sleep(5)
-                image = see_all_photos.find_element(by=By.XPATH, value= '//div[contains(@class, "MosaicTilestyled__MosaicTileImageStyled-sc-1f7i82h-1 ctubJh")]')
-                image = image.find_element(by=By.XPATH, value= '//img')
+                image = see_all_photos.find_element(by=By.XPATH, value= '//img[contains(@class, "SquareImage")]')
                 img = image.get_attribute('src')
                 self.dict_properties['Image URL'].append(img)
             except:
