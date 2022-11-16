@@ -10,13 +10,11 @@ To build the scraper, we required the following modules, labraries and packages
 * time for pacing the scraper
 
 Milestones 1
-Setup the GIT environment for the project.
+* Setup the GIT environment for the project.
 
 Milestone 2 
-Choose website to scrape the data from. 
-
-First of all we chose the Agoda website since our objective is to find hotel features and prices for a specfic destination during set dates
-We decided to use Agoda to obtain our data from because the data is relevant to our personal ambitions to travel extensively.
+* First of all we chose the Agoda website since our objective is to find hotel features and prices for a specfic destination during set dates
+* We decided to use Agoda to obtain our data from because the data is relevant to our personal ambitions to travel extensively.
 
 Milestone 3 and 4 
 * Create a class to perform the web scraping called Scraper.
