@@ -110,10 +110,10 @@ class Scraper:
 
 
     def get_price(self) -> Dict:
-        '''This method collects the price, hotel name, location and rating of the hotels.
+        '''This method collects the price of the hotels.
 
             Returns:
-                A dictionary with the price, hotel_name, location and rating.
+                A dictionary with the prices.
         '''
         for link in self.extended_hotel_link_list[0:10]:
             driver.get(link)
@@ -128,12 +128,16 @@ class Scraper:
         return self.dict_properties
 
     def get_hotelname(self) -> Dict:
+        """ This method collects the hotel names of the properties found
+        
+        Returns:
+            A dictionary with the hotel names. 
+        """
         for link in self.extended_hotel_link_list[0:10]:
             driver.get(link)
             time.sleep(20)
             try:
                 hotel_name = driver.find_element(by=By.XPATH, value= '//*[@id="property-main-content"]/div[1]/div[2]/div[1]/h1').text
-                #hotel_name =  WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="property-main-content"]/div[1]/div[2]/div[1]/h1'))).text
                 self.dict_properties['Hotel Name'].append(hotel_name)
             except:
                 hotel_name = 'Name not Found'
@@ -142,6 +146,11 @@ class Scraper:
         return self.dict_properties
 
     def get_location(self) -> Dict:
+        '''This method collects the location of the hotels.
+
+            Returns:
+                A dictionary with the locations.
+        '''
         for link in self.extended_hotel_link_list[0:10]:
             driver.get(link) 
             time.sleep(5)      
@@ -156,6 +165,11 @@ class Scraper:
 
 
     def get_rating(self) -> Dict:
+        '''This method collects the rating of the hotels.
+
+            Returns:
+                A dictionary with the ratings.
+        '''
         for link in self.extended_hotel_link_list[0:10]:
             driver.get(link) 
             time.sleep(5)
@@ -167,14 +181,10 @@ class Scraper:
                 self.dict_properties['Rating/10'].append(rating)        
             continue
         return self.dict_properties
-        
-             
+            
         
     def image_url(self) -> Dict:
-        '''This method finds and appends the image link to a dictionary.
-            
-            Args:
-                extended_link_list: A list of hotel links. 
+        '''This method finds and appends the image link to a dictioionary
 
             Returns:
                 A dictionary with the links of images.     
@@ -196,9 +206,6 @@ class Scraper:
     def timestamp(self) -> Dict:
         '''Method creates a date and time for when the record was scraped.
         
-           Args:
-               extended_link_list: A list of hotel links. 
-        
             Returns:
                 A dictionary with timesstamps for every record.
         '''
@@ -210,10 +217,7 @@ class Scraper:
          
 
     def unique_id(self) -> Dict:
-        '''This method creates unique id for every record in a dictionary.
-        
-            Args:
-                extended_link_list: A list of hotel links. 
+        '''This method creates unique id for every record in a dictionary
 
             Returns:
                 A dictionary with uniquely generated ids per record.
@@ -244,9 +248,6 @@ def info():
     crawler.accept_cookie()
     crawler.top_reviewed()
     crawler.scroller()
-    #list_of_hotels = crawler.list_of_hotel_links()
-    #extended_hotel_links = crawler.page_crawler(list_of_hotels)
-    #crawler.list_of_hotel_links(driver)
     crawler.page_crawler()
     crawler.get_price()
     crawler.get_hotelname()
