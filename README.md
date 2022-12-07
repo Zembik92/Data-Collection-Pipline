@@ -19,19 +19,30 @@ Milestone 2
 Milestone 3 and 4 
 * Create a class to perform the web scraping called Scraper.
 * Initialize the class.
-* Create a method to accept the cookies when prompted.
-* Create a method to sort the hotels by thier reviews, returning the ones with the top reviews first.
-* Create a method to scroll the page from top to bottom
-* Create a method to populate a list containing all the links of hotels on the first webpage
-* Create a method to expend the above created list with hotel links for a specified number of webpages.
-* Create methods to get required information from the hotel links.
-* Create methods to produce unique ids and timestamps 
-* Create methods to create the folders and file as required.
-* Create a method to download images from the links and store in a folder
+* Create methods to nevigate the webpage and to obtain the information needed.
+
 
 Milestone 5 
 * Add docstring to all methods 
-* Create a unit test to test all public methods
+* Create unit tests to test all public methods
+
+Milestone 6 
+* Downloaded and created a docker hub account 
+* Build a docker image with all the dependancies for the application then pushed the docker container to docker hub
+
+
+
+
+<img width="367" alt="docker-hub" src="https://user-images.githubusercontent.com/114100987/206197429-3d066086-0f21-4402-abcd-163dc952468e.png">
+
+
+
+
+
+Milestone 7
+* Set up the GitHub secrets following: https://docs.docker.com/build/ci/github-actions/
+* Create the GitHub actions that will create a docker image and push it to the docker hub when pushed to main of the repository.
+
 
 
 
